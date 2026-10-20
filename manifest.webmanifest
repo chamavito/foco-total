@@ -1,0 +1,37 @@
+{
+  "name": "Foco total",
+  "short_name": "Foco total",
+  "description": "Pomodoro e relógio em tela cheia para dobráveis em formato tenda",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "./index.html",
+  "display": "fullscreen",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "any",
+  "background_color": "#4A6B4A",
+  "theme_color": "#4A6B4A",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

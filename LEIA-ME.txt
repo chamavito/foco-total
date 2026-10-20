@@ -1,0 +1,32 @@
+FOCO TOTAL — PACOTE PWA
+=======================
+
+O que tem aqui
+  index.html            o app
+  manifest.webmanifest  nome, cores, ícone e modo tela cheia
+  sw.js                 deixa o app funcionar sem internet
+  icons/                ícones (o "x" do Eixo XYZ)
+
+COMO PUBLICAR (GitHub Pages, grátis)
+  1. Crie uma conta em github.com e um repositório público novo (ex.: foco-total).
+  2. Em "Add file > Upload files", envie TODOS os arquivos, mantendo a pasta icons.
+     (Pelo celular, descompacte o zip antes. No navegador do computador é mais fácil.)
+  3. Em Settings > Pages, escolha "Deploy from a branch", branch "main" e pasta "/ (root)".
+  4. Espere cerca de 1 minuto. O endereço será:
+     https://SEU-USUARIO.github.io/foco-total/
+
+COMO INSTALAR NO RAZR
+  1. Abra esse endereço no Chrome do celular.
+  2. Toque no menu (⋮) > "Instalar app" (ou "Adicionar à tela inicial").
+  3. Abra pelo ícone novo. Ele abre em tela cheia, sem barra do navegador.
+  4. Abra uma vez com internet, para guardar as fontes. Depois disso funciona offline.
+
+COMO ATUALIZAR
+  1. Troque o index.html no repositório.
+  2. No sw.js, mude VERSAO ('foco-total-v1' para 'foco-total-v2', e assim por diante).
+  3. Feche e abra o app duas vezes para a versão nova entrar.
+
+OBSERVAÇÕES
+  - Precisa de HTTPS (o GitHub Pages já usa). Sem isso, a tela não fica ligada.
+  - O alarme de fim de ciclo só toca com o app aberto; em segundo plano o Android pausa a página.
+  - Os dados (modo escuro, modo relógio, durações) ficam salvos só no aparelho.
