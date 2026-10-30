@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#4A6B4A">
-<title>Foco total</title>
+<title>Órbita</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Foco total">
+<meta name="apple-mobile-web-app-title" content="Órbita">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Barlow+Condensed:wght@800&family=Nunito:wght@700&display=swap" rel="stylesheet">
@@ -226,11 +226,11 @@ body.txtoff .sl,body.txtoff .sl2,body.txtoff .sl3{opacity:0}
   background:radial-gradient(circle at 50% 27%,currentColor 0 .085em,transparent calc(.085em + .5px)),radial-gradient(circle at 50% 73%,currentColor 0 .085em,transparent calc(.085em + .5px))}
 /* tela 12: números pesados em itálico com o logo do Eixo XYZ */
 .nk{background:var(--cell-3)}
-.nkw{--nk:min(62vw,40dvh);position:relative;display:flex;flex-direction:column;align-items:center}
+.nkw{--nk:min(54vw,34dvh);position:relative;display:flex;flex-direction:column;align-items:center}
 .nkd{display:flex;flex-direction:column;align-items:center;gap:calc(var(--nk)*.09);font:italic 900 var(--nk)/1 'Inter',var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--ink-dark);transition:color .6s}
 .nkd span{display:block;text-box:trim-both cap alphabetic}
 .nkd .ss{opacity:.3}
-.nkx{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:calc(var(--nk)*.14);width:calc(var(--nk)*.2);height:auto;fill:#1F2F1E}
+.nkx{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:calc(var(--nk)*.14);width:calc(var(--nk)*.17);height:auto;fill:#1F2F1E}
 :root[data-theme=dark] .nk{background:#000}
 :root[data-theme=dark] .nkd{color:var(--accent)}
 :root[data-theme=dark] .nkx{fill:#C4D98A}
@@ -611,7 +611,7 @@ function render(){
     $('play').innerHTML=st.running?'<svg viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>':'<svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg>';
     $('play').setAttribute('aria-label',st.running?'Pausar':'Iniciar');
   }
-  document.title=((st.running||cfg.clock)?t+' · ':'')+'Foco total';
+  document.title=((st.running||cfg.clock)?t+' · ':'')+'Órbita';
 }
 /* relógio de estação e horário de término: 1 vez por segundo, só se a tela estiver visível */
 function clk(a){
@@ -791,6 +791,19 @@ function mark(){
 function go(k){P.scrollLeft=Math.max(0,Math.min(N-1,k))*P.clientWidth}
 P.addEventListener('scroll',function(){mark();clearTimeout(sT);sT=setTimeout(function(){cfg.page=cur();save()},200)});
 window.addEventListener('resize',function(){layout();go(cfg.page||0)});
+/* arrastar para trocar de tela: garante a troca mesmo quando o navegador não rola sozinho (ex.: WebView do app) */
+var sw={x:0,y:0,s:0,on:false};
+document.addEventListener('pointerdown',function(e){
+  if(e.target.closest&&e.target.closest('#pages')){sw.x=e.clientX;sw.y=e.clientY;sw.s=P.scrollLeft;sw.on=true}else sw.on=false;
+},true);
+document.addEventListener('pointerup',function(e){
+  if(!sw.on)return;sw.on=false;
+  var dx=e.clientX-sw.x,dy=e.clientY-sw.y;
+  if(Math.abs(dx)>50&&Math.abs(dx)>1.4*Math.abs(dy)&&Math.abs(P.scrollLeft-sw.s)<8){
+    var k=Math.max(0,Math.min(N-1,cur()+(dx<0?1:-1)));
+    P.scrollTo({left:k*P.clientWidth,behavior:'smooth'});
+  }
+},true);
 document.addEventListener('keydown',function(e){
   if(e.code==='Space'&&!$('sheet').classList.contains('open')){e.preventDefault();toggle()}
   if(e.code==='ArrowRight')P.scrollBy({left:P.clientWidth,behavior:'smooth'});

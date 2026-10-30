@@ -1,6 +1,6 @@
-/* Foco total — modo offline.
+/* Órbita — modo offline.
    Para publicar uma versão nova, troque o número de VERSAO abaixo. */
-const VERSAO = 'foco-total-v1';
+const VERSAO = 'orbita-v2';
 const ARQUIVOS = ['./', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/icon-180.png'];
 

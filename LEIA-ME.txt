@@ -1,4 +1,4 @@
-FOCO TOTAL — PACOTE PWA
+ÓRBITA — PACOTE PWA
 =======================
 
 O que tem aqui
@@ -8,12 +8,12 @@ O que tem aqui
   icons/                ícones (o "x" do Eixo XYZ)
 
 COMO PUBLICAR (GitHub Pages, grátis)
-  1. Crie uma conta em github.com e um repositório público novo (ex.: foco-total).
+  1. Crie uma conta em github.com e um repositório público novo (ex.: orbita).
   2. Em "Add file > Upload files", envie TODOS os arquivos, mantendo a pasta icons.
      (Pelo celular, descompacte o zip antes. No navegador do computador é mais fácil.)
   3. Em Settings > Pages, escolha "Deploy from a branch", branch "main" e pasta "/ (root)".
   4. Espere cerca de 1 minuto. O endereço será:
-     https://SEU-USUARIO.github.io/foco-total/
+     https://SEU-USUARIO.github.io/orbita/
 
 COMO INSTALAR NO RAZR
   1. Abra esse endereço no Chrome do celular.
@@ -23,7 +23,7 @@ COMO INSTALAR NO RAZR
 
 COMO ATUALIZAR
   1. Troque o index.html no repositório.
-  2. No sw.js, mude VERSAO ('foco-total-v1' para 'foco-total-v2', e assim por diante).
+  2. No sw.js, mude VERSAO ('orbita-v2' para 'orbita-v3', e assim por diante).
   3. Feche e abra o app duas vezes para a versão nova entrar.
 
 OBSERVAÇÕES

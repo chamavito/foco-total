@@ -1,7 +1,7 @@
 {
-  "name": "Foco total",
-  "short_name": "Foco total",
-  "description": "Pomodoro e relógio em tela cheia para dobráveis em formato tenda",
+  "name": "Órbita",
+  "short_name": "Órbita",
+  "description": "Relógios em tela cheia para dobráveis em formato tenda",
   "lang": "pt-BR",
   "start_url": "./index.html",
   "scope": "./",
